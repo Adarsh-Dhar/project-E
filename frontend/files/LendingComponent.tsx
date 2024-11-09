@@ -1,5 +1,7 @@
+"use client"
 import { useState } from 'react';
 import { useLending } from '../integrations/hooks/useLending';
+import { Input } from "@/components/ui/input"
 
 export function LendingComponent() {
   const { lend, borrow, loading, error } = useLending();
@@ -21,13 +23,13 @@ export function LendingComponent() {
 
   return (
     <div>
-      <input
+      <Input
         type="text"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Amount"
       />
-      <input
+      <Input
         type="text"
         value={tokenAddress}
         onChange={(e) => setTokenAddress(e.target.value)}
